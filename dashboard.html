@@ -1,0 +1,435 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="COSMOS AI Powered Career Discovery Dashboard">
+    <title>COSMOS | Student Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .quick-access-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 24px;
+            align-items: stretch;
+        }
+
+        .quick-access-grid > .quick-access-card {
+            width: 100%;
+            min-width: 0;
+            grid-column: auto;
+        }
+
+        @media (max-width: 900px) {
+            .quick-access-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 600px) {
+            .quick-access-grid {
+                grid-template-columns: minmax(0, 1fr);
+            }
+        }
+
+        /* Dashboard profile details */
+        .cosmos-preference {
+            margin-top: 8px;
+            font-size: 0.92rem;
+            line-height: 1.7;
+        }
+
+        .cosmos-preference strong {
+            font-weight: 700;
+        }
+
+        .cosmos-career-list {
+            margin-top: 12px;
+            padding-left: 22px;
+            line-height: 1.9;
+        }
+    </style>
+</head>
+
+<body class="dashboard-page">
+
+<header class="site-header">
+    <div class="header-container">
+
+        <a href="index.html" class="brand">
+            <div class="brand-symbol">✦</div>
+            <div class="brand-text">
+                <strong>COSMOS</strong>
+                <span>CAREER INTELLIGENCE</span>
+            </div>
+        </a>
+
+        <nav class="main-nav">
+            <a href="dashboard.html" class="active">Dashboard</a>
+            <a href="index.html">Home</a>
+            <button type="button" onclick="logoutCosmosUser()"
+                style="background:none;border:0;color:inherit;font:inherit;cursor:pointer;">
+                Logout
+            </button>
+        </nav>
+
+        <button type="button" class="menu-toggle" id="menuToggle"
+            aria-label="Toggle navigation menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+
+    <!-- One mobile menu containing all mobile navigation items -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="index.html">Home</a>
+        <button type="button" onclick="logoutCosmosUser()">Logout</button>
+    </div>
+</header>
+
+<!-- DASHBOARD WELCOME -->
+<section class="dashboard-hero">
+    <div class="dashboard-hero-inner">
+
+        <div class="dashboard-welcome">
+            <span class="dashboard-eyebrow">
+                ✦ COSMOS STUDENT DASHBOARD
+            </span>
+
+            <h1>
+                Welcome back,
+                <span id="studentName">Student</span>
+            </h1>
+
+            <p id="dashboardIntro">
+                Your personalized career journey starts here.
+                Explore your strengths, build your skills and discover
+                career opportunities that match your goals.
+            </p>
+        </div>
+
+        <div class="dashboard-user-card">
+            <div class="dashboard-user-avatar" id="profileAvatar">S</div>
+
+            <div class="dashboard-user-info">
+                <span>LOGGED IN AS</span>
+                <h3 id="profileName">Student</h3>
+                <p><span id="profileUsername">username</span></p>
+            </div>
+
+            <div class="dashboard-user-status">
+                <span class="status-dot"></span>
+                <span>Active</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- MAIN DASHBOARD -->
+<section class="dashboard-section">
+    <div class="dashboard-container">
+
+        <!-- STUDENT PROFILE -->
+        <div class="profile-card dashboard-card">
+            <div class="profile-card-content">
+                <div class="avatar" id="dashboardAvatar">S</div>
+
+                <div class="profile-details">
+                    <h2 id="dashboardProfileName">Student</h2>
+
+                    <p>
+                        Username:
+                        <strong id="dashboardUsername">username</strong>
+                    </p>
+
+                    <p class="cosmos-preference">
+                        Department:
+                        <strong id="studentDepartment">Loading...</strong>
+                    </p>
+
+                    <p class="cosmos-preference">
+                        Career Direction:
+                        <strong id="studentCareerDirection">Loading...</strong>
+                    </p>
+                </div>
+            </div>
+
+            <div class="status-badge">
+                <span class="status-dot"></span>
+                Active Student
+            </div>
+        </div>
+
+        <!-- STATISTICS -->
+        <div class="dashboard-grid">
+
+            <div class="dashboard-card stat-card">
+                <div class="stat-icon">🧠</div>
+                <div class="stat-content">
+                    <span>CAREER ASSESSMENT</span>
+                    <strong id="assessmentStatus">Not Completed</strong>
+                </div>
+            </div>
+
+            <div class="dashboard-card stat-card">
+                <div class="stat-icon">📄</div>
+                <div class="stat-content">
+                    <span>RESUME ANALYSIS</span>
+                    <strong id="resumeStatus">Not Analyzed</strong>
+                </div>
+            </div>
+
+            <div class="dashboard-card stat-card">
+                <div class="stat-icon">💻</div>
+                <div class="stat-content">
+                    <span>TECHNICAL TEST</span>
+                    <strong id="testStatus">Not Attempted</strong>
+                </div>
+            </div>
+
+            <div class="dashboard-card stat-card">
+                <div class="stat-icon">🚀</div>
+                <div class="stat-content">
+                    <span>CAREER MATCH</span>
+                    <strong id="careerStatus">Discover</strong>
+                </div>
+            </div>
+        </div>
+
+        <!-- PERSONALIZED CAREER IDEAS -->
+        <div class="dashboard-actions">
+            <div class="section-heading">
+                <span class="page-label">YOUR CAREER PATH</span>
+                <h2>Career Ideas for You</h2>
+                <p id="recommendationText">
+                    Your career ideas will be based on your department
+                    and preferred career direction.
+                </p>
+            </div>
+
+            <div class="dashboard-card" style="padding:24px;">
+                <h3 id="recommendedCareer">Explore Your Career Matches</h3>
+                <p id="careerGuidance">
+                    Your department and career preference can help you
+                    explore suitable professional opportunities.
+                </p>
+                <ul id="careerIdeas" class="cosmos-career-list">
+                    <li>Explore careers that interest you.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- QUICK ACCESS -->
+        <div class="dashboard-actions">
+            <div class="section-heading">
+                <span class="page-label">EXPLORE COSMOS</span>
+                <h2>Quick Access</h2>
+                <p>
+                    Everything you need to discover, prepare for and
+                    achieve your career goals.
+                </p>
+            </div>
+
+            <div class="quick-access-grid">
+
+                <a href="assessment.html" class="quick-access-card">
+                    <div class="quick-card-top">
+                        <div class="quick-card-icon">🧠</div>
+                        <span class="quick-card-number">01</span>
+                    </div>
+                    <div class="quick-card-content">
+                        <span class="quick-card-label">DISCOVER</span>
+                        <h3>Career Assessment</h3>
+                        <p>
+                            Discover your strengths, interests and
+                            personality to find suitable career paths.
+                        </p>
+                    </div>
+                    <div class="quick-card-link">
+                        Start Assessment <span>→</span>
+                    </div>
+                </a>
+
+                <a href="discover.html" class="quick-access-card">
+                    <div class="quick-card-top">
+                        <div class="quick-card-icon">🔍</div>
+                        <span class="quick-card-number">02</span>
+                    </div>
+                    <div class="quick-card-content">
+                        <span class="quick-card-label">DISCOVER</span>
+                        <h3>Discover Careers</h3>
+                        <p>
+                            Explore career paths that match your skills,
+                            interests and strengths with COSMOS.
+                        </p>
+                    </div>
+                    <div class="quick-card-link">
+                        Explore Careers <span>→</span>
+                    </div>
+                </a>
+
+                <a href="resume.html" class="quick-access-card">
+                    <div class="quick-card-top">
+                        <div class="quick-card-icon">📄</div>
+                        <span class="quick-card-number">03</span>
+                    </div>
+                    <div class="quick-card-content">
+                        <span class="quick-card-label">ANALYZE</span>
+                        <h3>Resume Analyzer</h3>
+                        <p>
+                            Analyze your skills, education, projects
+                            and experience.
+                        </p>
+                    </div>
+                    <div class="quick-card-link">
+                        Analyze Resume <span>→</span>
+                    </div>
+                </a>
+
+                <a href="test.html" class="quick-access-card">
+                    <div class="quick-card-top">
+                        <div class="quick-card-icon">💻</div>
+                        <span class="quick-card-number">04</span>
+                    </div>
+                    <div class="quick-card-content">
+                        <span class="quick-card-label">TEST</span>
+                        <h3>Technical Test</h3>
+                        <p>
+                            Test your knowledge with the COSMOS assessment
+                            relevant to your learning and career goals.
+                        </p>
+                    </div>
+                    <div class="quick-card-link">
+                        Take Test <span>→</span>
+                    </div>
+                </a>
+
+                <a href="careers.html" class="quick-access-card">
+                    <div class="quick-card-top">
+                        <div class="quick-card-icon">🚀</div>
+                        <span class="quick-card-number">05</span>
+                    </div>
+                    <div class="quick-card-content">
+                        <span class="quick-card-label">EXPLORE</span>
+                        <h3>Career Explorer</h3>
+                        <p>
+                            Explore career options and understand the
+                            skills required for each role.
+                        </p>
+                    </div>
+                    <div class="quick-card-link">
+                        Explore Careers <span>→</span>
+                    </div>
+                </a>
+
+                <a href="resume-builder.html" class="quick-access-card">
+                    <div class="quick-card-top">
+                        <div class="quick-card-icon">📝</div>
+                        <span class="quick-card-number">06</span>
+                    </div>
+                    <div class="quick-card-content">
+                        <span class="quick-card-label">CREATE</span>
+                        <h3>Resume Builder</h3>
+                        <p>
+                            Create and download a resume using your saved
+                            resume analysis.
+                        </p>
+                    </div>
+                    <div class="quick-card-link">
+                        Create Resume <span>→</span>
+                    </div>
+                </a>
+
+                <a href="certificate.html" class="quick-access-card">
+                    <div class="quick-card-top">
+                        <div class="quick-card-icon">🏆</div>
+                        <span class="quick-card-number">07</span>
+                    </div>
+                    <div class="quick-card-content">
+                        <span class="quick-card-label">ACHIEVEMENT</span>
+                        <h3>Certificate</h3>
+                        <p>
+                            View your COSMOS certificate after successfully
+                            completing the technical assessment.
+                        </p>
+                    </div>
+                    <div class="quick-card-link">
+                        View Certificate <span>→</span>
+                    </div>
+                </a>
+
+                <a href="free-courses.html" class="quick-access-card">
+                    <div class="quick-card-top">
+                        <div class="quick-card-icon">🎓</div>
+                        <span class="quick-card-number">08</span>
+                    </div>
+                    <div class="quick-card-content">
+                        <span class="quick-card-label">LEARN</span>
+                        <h3>Free Courses</h3>
+                        <p>
+                            Explore free courses and track your learning
+                            progress and certificates.
+                        </p>
+                    </div>
+                    <div class="quick-card-link">
+                        Explore Free Courses <span>→</span>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-brand">
+            <div class="brand-symbol">✦</div>
+            <div>
+                <strong>COSMOS</strong>
+                <p>AI-Powered Career Intelligence</p>
+            </div>
+        </div>
+
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="ai-chat.html">AI Chat</a>
+            <a href="certificate.html">Certificate</a>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 COSMOS. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/config.js"></script>
+<script src="js/journey.js"></script>
+<script src="js/dashboard.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.getElementById("menuToggle");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener("click", function () {
+            menuToggle.classList.toggle("active");
+            mobileMenu.classList.toggle("active");
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                String(menuToggle.classList.contains("active"))
+            );
+        });
+    }
+});
+</script>
+
+</body>
+</html>

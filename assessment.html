@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Career Assessment | COSMOS</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="assessment-page">
+
+<header class="main-header">
+    <a href="dashboard.html" class="brand">
+        <div class="brand-symbol">✦</div>
+
+        <div class="brand-name">
+            <strong>COSMOS</strong>
+            <span>CAREER INTELLIGENCE</span>
+        </div>
+    </a>
+</header>
+
+<main>
+
+<section class="page-hero assessment-hero">
+
+    <div class="page-hero-content">
+
+        <span class="page-label">
+            STEP 01 • DISCOVER
+        </span>
+
+        <h1>
+            Career Assessment
+        </h1>
+
+        <p>
+            Answer honestly to help COSMOS understand your
+            interests, strengths and preferred working style.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="assessment-section">
+
+<div class="assessment-container">
+
+    <div class="assessment-progress">
+    
+        <div class="progress-info">
+
+            <span>
+                Question <strong id="currentQuestion">1</strong>
+                of <strong id="totalQuestions">10</strong>
+            </span>
+
+            <strong id="progressPercent">10%</strong>
+
+        </div>
+
+
+        <div class="progress-track">
+
+            <div
+                class="progress-fill"
+                id="assessmentProgressFill"
+            ></div>
+
+        </div>
+
+    </div>
+
+
+    <div class="question-card">
+
+        <span
+            class="question-category"
+            id="questionCategory"
+        >
+            TECHNICAL
+        </span>
+
+
+        <h2
+            class="question-text"
+            id="questionText"
+        >
+            Loading question...
+        </h2>
+
+
+        <div
+            class="options-grid"
+            id="optionsContainer"
+        ></div>
+
+    </div>
+
+
+    <div class="assessment-navigation">
+
+        <button
+            class="outline-btn"
+            id="previousBtn"
+            type="button"
+        >
+            ← Previous
+        </button>
+
+
+        <button
+            class="primary-btn"
+            id="nextBtn"
+            type="button"
+        >
+            Next →
+        </button>
+
+    </div>
+   <div class="hero-actions">
+     <a href="dashboard.html" class="primary-btn">
+Dashboard</a>
+  </div>
+    <!-- =====================================================
+         EXISTING RESULT SECTION
+         ===================================================== -->
+
+    <div
+        class="assessment-result"
+        id="assessmentResult"
+    >
+
+        <div class="result-header">
+
+            <span class="result-icon">
+                ✦
+            </span>
+
+            <span class="page-label">
+                YOUR RESULT
+            </span>
+
+            <h2>
+                Your Career Profile
+            </h2>
+
+        </div>
+
+
+        <div class="score-grid">
+
+            <div class="score-card">
+
+                <strong id="technicalScore">
+                    0
+                </strong>
+
+                <span>
+                    Technical
+                </span>
+
+            </div>
+
+
+            <div class="score-card">
+
+                <strong id="analyticalScore">
+                    0
+                </strong>
+
+                <span>
+                    Analytical
+                </span>
+
+            </div>
+
+
+            <div class="score-card">
+
+                <strong id="creativeScore">
+                    0
+                </strong>
+
+                <span>
+                    Creative
+                </span>
+
+            </div>
+
+
+            <div class="score-card">
+
+                <strong id="communicationScore">
+                    0
+                </strong>
+
+                <span>
+                    Communication
+                </span>
+
+            </div>
+
+
+            <div class="score-card">
+
+                <strong id="leadershipScore">
+                    0
+                </strong>
+
+                <span>
+                    Leadership
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="career-result">
+
+            <span>
+                RECOMMENDED CAREER
+            </span>
+
+            <h3 id="assessmentCareer">
+                Career
+            </h3>
+
+
+            <p id="assessmentCareerDescription">
+                Your recommendation will appear here.
+            </p>
+
+
+            <!-- =================================================
+                 CHANGED:
+                 HOME BUTTON → CONTINUE TO DISCOVER
+                 ================================================= -->
+
+            <div class="assessment-complete-message">
+
+                <span class="complete-icon">
+                    ✓
+                </span>
+
+                <div>
+
+                    <strong>
+                        Step 1 Completed
+                    </strong>
+
+                    <p>
+                        Your career profile has been successfully
+                        analyzed. Continue to discover careers
+                        that match your profile.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <a
+                href="discover.html"
+                class="primary-btn"
+                id="continueDiscoverBtn">
+            
+                Continue to Discover →
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+</main>
+
+
+<!-- =========================================================
+     IMPORTANT:
+     journey.js ADDED
+     ========================================================= -->
+
+<script src="js/config.js"></script>
+
+<script src="js/journey.js"></script>
+
+<script src="js/assessment.js"></script>
+
+
+</body>
+</html>

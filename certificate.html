@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Certificate | COSMOS</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="certificate-page">
+
+<header class="main-header">
+    <a href="dashboard.html" class="brand">
+        <div class="brand-symbol">✦</div>
+        <div class="brand-name">
+            <strong>COSMOS</strong>
+            <span>CAREER INTELLIGENCE</span>
+        </div>
+    </a>
+
+    <a href="dashboard.html" class="back-home">← Dashboard</a>
+</header>
+
+<main>
+    <section class="page-hero certificate-hero">
+        <div class="page-hero-content">
+            <span class="page-label">ACHIEVEMENT</span>
+            <h1>Your Certificate</h1>
+            <p>
+                Congratulations on completing the COSMOS
+                technical assessment.
+            </p>
+        </div>
+    </section>
+
+    <section class="certificate-section">
+        <div class="certificate-container">
+
+            <div class="certificate-loading" id="certificateLoading">
+                Loading certificate...
+            </div>
+
+            <div class="not-eligible" id="notEligible">
+                <div class="result-icon">!</div>
+                <h2>Certificate Not Available</h2>
+
+                <p id="notEligibleMessage">
+                    You need to pass the technical test with at least
+                    60% to receive your certificate.
+                </p>
+
+                <a href="test.html" class="primary-btn">
+                    Take Technical Test →
+                </a>
+            </div>
+
+            <div id="certificateArea">
+                <div class="certificate-wrapper">
+                    <div class="certificate-card">
+
+                        <div class="certificate-header">
+                            <div class="certificate-seal">✦</div>
+                            <span>COSMOS CAREER INTELLIGENCE</span>
+                            <h2>Certificate of Achievement</h2>
+                        </div>
+
+                        <div class="certificate-body">
+                            <p>This certificate is proudly presented to</p>
+
+                            <h1 class="certificate-student" id="studentName">
+                                Student Name
+                            </h1>
+
+                            <p>
+                                for successfully completing the
+                                COSMOS Technical Skills Assessment
+                            </p>
+
+                            <div class="certificate-highlight">
+                                <span>RECOMMENDED CAREER</span>
+                                <strong id="certificateCareer">
+                                    Software Developer
+                                </strong>
+                            </div>
+
+                            <div class="certificate-meta">
+                                <div>
+                                    <span>Score</span>
+                                    <strong id="certificateScore">0%</strong>
+                                </div>
+
+                                <div>
+                                    <span>Certificate ID</span>
+                               <strong>
+                                        COSMOS-Vim-project
+                                    </strong>
+                                </div>
+
+                                <div>
+                                    <span>Issue Date</span>
+                                    <strong id="issueDate">—</strong>
+                                </div>
+                            </div>
+
+                            <div class="certificate-signature">
+                                <span>✦</span>
+                                <strong>COSMOS</strong>
+                                <small>Career Intelligence</small>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="certificate-actions">
+                    <button class="primary-btn" id="printButton" type="button">
+                        Print Certificate
+                    </button>
+
+  
+
+              </div>
+            </div>
+
+        </div>
+    </section>
+</main>
+
+<script src="js/config.js"></script>
+<script src="js/journey.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.2/html2pdf.bundle.min.js"></script>
+<script src="js/certificate.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const loading = document.getElementById("certificateLoading");
+    const notEligible = document.getElementById("notEligible");
+    const message = document.getElementById("notEligibleMessage");
+
+    if (loading && notEligible && message) {
+        console.log("COSMOS certificate page loaded.");
+    }
+});
+</script>
+
+</body>
+</html>
