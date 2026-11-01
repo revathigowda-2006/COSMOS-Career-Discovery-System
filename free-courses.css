@@ -1,0 +1,1212 @@
+
+/* =========================================================
+   COSMOS — FREE COURSES
+   Professional • Elegant • Static
+   Palette: Slate Navy + Soft Violet + Light Blue
+   ========================================================= */
+
+
+/* ---------- 1. Page Theme ---------- */
+
+.free-courses-page {
+    --fc-bg: #111827;
+    --fc-surface: #1B2435;
+    --fc-raised: #263249;
+
+    --fc-violet: #8B7CC8;
+    --fc-violet-deep: #665A9F;
+    --fc-violet-light: #B3A8E3;
+
+    --fc-blue: #8DB7D3;
+    --fc-blue-light: #C6DCEB;
+    --fc-blue-deep: #6E9CB9;
+
+    --fc-white: #F3F2F8;
+    --fc-text: #D7D9E5;
+    --fc-muted: #A5ABBC;
+    --fc-faint: #7F879A;
+
+    --fc-success: #75B69A;
+    --fc-danger: #D77F91;
+    --fc-warning: #D5B878;
+
+    --fc-border: rgba(192, 187, 230, .15);
+    --fc-border-strong: rgba(192, 187, 230, .28);
+
+    --fc-card: linear-gradient(145deg, #263249, #1B2435);
+    --fc-shadow: 0 18px 45px rgba(3, 8, 20, .22);
+
+    color: var(--fc-white);
+    background:
+        radial-gradient(
+            ellipse at 50% 0%,
+            rgba(139, 124, 200, .08),
+            transparent 48%
+        ),
+        var(--fc-bg);
+
+    font-family: "Inter", Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.65;
+
+    min-height: 100vh;
+    overflow-x: clip;
+}
+
+
+/* ---------- 2. Static Reset ---------- */
+
+.free-courses-page *,
+.free-courses-page *::before,
+.free-courses-page *::after {
+    box-sizing: border-box;
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+}
+
+.free-courses-page [hidden] {
+    display: none !important;
+}
+
+.free-courses-page img {
+    display: block;
+    max-width: 100%;
+}
+
+.free-courses-page a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.free-courses-page button,
+.free-courses-page input,
+.free-courses-page select,
+.free-courses-page textarea {
+    font: inherit;
+}
+
+.free-courses-page button {
+    cursor: pointer;
+}
+
+.free-courses-page h1,
+.free-courses-page h2,
+.free-courses-page h3,
+.free-courses-page h4 {
+    color: var(--fc-white);
+    line-height: 1.3;
+}
+
+.free-courses-page p {
+    color: var(--fc-text);
+}
+
+.free-courses-page :focus-visible {
+    outline: 2px solid var(--fc-blue-light);
+    outline-offset: 3px;
+}
+
+.free-courses-page ::selection {
+    color: var(--fc-bg);
+    background: var(--fc-blue-light);
+}
+
+
+/* ---------- 3. Page Width ---------- */
+
+.free-courses-page .course-header,
+.free-courses-page .course-hero,
+.free-courses-page .catalog-section,
+.free-courses-page .my-learning-section,
+.free-courses-page .course-footer {
+    width: min(1180px, calc(100% - 48px));
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+/* ---------- 4. Header ---------- */
+
+.free-courses-page .course-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+
+    min-height: 82px;
+    padding: 18px 0;
+
+    border-bottom: 1px solid var(--fc-border);
+}
+
+.free-courses-page .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+
+    color: var(--fc-white);
+    font-size: 1.15rem;
+    font-weight: 800;
+    letter-spacing: .12em;
+}
+
+.free-courses-page .brand-mark {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+
+    width: 43px;
+    height: 43px;
+
+    color: var(--fc-bg);
+    background: var(--fc-blue-light);
+    border-radius: 13px;
+
+    font-size: 1.15rem;
+    font-weight: 900;
+}
+
+.free-courses-page .course-header nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 7px;
+}
+
+.free-courses-page .course-header nav a,
+.free-courses-page .course-header nav button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 40px;
+    padding: 9px 14px;
+
+    color: var(--fc-muted);
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 10px;
+
+    font-size: .88rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.free-courses-page .course-header nav a:hover,
+.free-courses-page .course-header nav button:hover {
+    color: var(--fc-white);
+    background: rgba(139, 124, 200, .10);
+    border-color: var(--fc-border);
+}
+
+.free-courses-page .course-header nav a[aria-current="page"],
+.free-courses-page .course-header nav a.active {
+    color: var(--fc-blue-light);
+    background: rgba(141, 183, 211, .09);
+    border-color: rgba(141, 183, 211, .24);
+}
+
+.free-courses-page #logoutButton {
+    color: var(--fc-danger);
+}
+
+
+/* ---------- 5. Hero Section ---------- */
+
+.free-courses-page .course-hero {
+    position: relative;
+
+    margin-top: 34px;
+    margin-bottom: 30px;
+    padding: clamp(30px, 5vw, 55px);
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            120deg,
+            rgba(139, 124, 200, .12),
+            rgba(38, 50, 73, .92) 58%,
+            rgba(141, 183, 211, .07)
+        );
+
+    border: 1px solid var(--fc-border);
+    border-radius: 24px;
+}
+
+.free-courses-page .course-hero > * {
+    position: relative;
+    z-index: 1;
+}
+
+.free-courses-page .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-bottom: 17px;
+    padding: 7px 12px;
+
+    color: var(--fc-blue-light);
+    background: rgba(141, 183, 211, .09);
+    border: 1px solid rgba(141, 183, 211, .23);
+    border-radius: 7px;
+
+    font-size: .72rem;
+    font-weight: 800;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+}
+
+.free-courses-page .course-hero h1 {
+    max-width: 780px;
+    margin: 0 0 16px;
+
+    color: var(--fc-white);
+    font-size: clamp(2rem, 4.5vw, 3.35rem);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -.04em;
+}
+
+.free-courses-page .course-hero h1 span {
+    color: var(--fc-violet-light);
+}
+
+.free-courses-page .course-hero > p {
+    max-width: 680px;
+    margin-bottom: 0;
+
+    color: var(--fc-muted);
+    font-size: 1rem;
+    line-height: 1.85;
+}
+
+.free-courses-page .hero-note {
+    max-width: 700px;
+    margin-top: 23px;
+    padding: 15px 18px;
+
+    color: var(--fc-text);
+    background: rgba(17, 24, 39, .40);
+    border: 1px solid var(--fc-border);
+    border-left: 3px solid var(--fc-blue);
+    border-radius: 9px;
+
+    font-size: .9rem;
+}
+
+.free-courses-page .hero-note strong {
+    color: var(--fc-blue-light);
+}
+
+.free-courses-page .hero-note p {
+    margin: 4px 0 0;
+    color: var(--fc-muted);
+    font-size: .88rem;
+}
+
+
+/* ---------- 6. Summary Cards ---------- */
+
+.free-courses-page .learning-summary,
+.free-courses-page .summary-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+
+    margin: 0 auto 48px;
+}
+
+.free-courses-page .summary-card {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+
+    min-width: 0;
+    padding: 23px;
+
+    background: var(--fc-surface);
+    border: 1px solid var(--fc-border);
+    border-radius: 16px;
+}
+
+.free-courses-page .summary-icon {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+
+    width: 49px;
+    height: 49px;
+
+    color: var(--fc-violet-light);
+    background: rgba(139, 124, 200, .13);
+    border: 1px solid rgba(139, 124, 200, .22);
+    border-radius: 13px;
+
+    font-size: 1.25rem;
+}
+
+.free-courses-page .summary-card:nth-child(2) .summary-icon {
+    color: var(--fc-blue-light);
+    background: rgba(141, 183, 211, .10);
+    border-color: rgba(141, 183, 211, .22);
+}
+
+.free-courses-page .summary-card:nth-child(3) .summary-icon {
+    color: var(--fc-success);
+    background: rgba(117, 182, 154, .10);
+    border-color: rgba(117, 182, 154, .22);
+}
+
+.free-courses-page .summary-label {
+    display: block;
+    margin-bottom: 5px;
+
+    color: var(--fc-muted);
+    font-size: .82rem;
+    font-weight: 600;
+}
+
+.free-courses-page .summary-value,
+.free-courses-page .summary-card strong {
+    display: block;
+
+    color: var(--fc-white);
+    font-size: 1.8rem;
+    font-weight: 800;
+    line-height: 1.2;
+    font-variant-numeric: tabular-nums;
+}
+
+
+/* ---------- 7. Section Headings ---------- */
+
+.free-courses-page .catalog-section,
+.free-courses-page .my-learning-section {
+    margin-top: 0;
+    margin-bottom: 52px;
+}
+
+.free-courses-page .section-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 18px;
+
+    margin-bottom: 22px;
+}
+
+.free-courses-page .section-heading h2,
+.free-courses-page .catalog-section > h2,
+.free-courses-page .my-learning-section > h2 {
+    margin: 0 0 8px;
+
+    font-size: clamp(1.45rem, 3vw, 2rem);
+    font-weight: 800;
+    letter-spacing: -.025em;
+}
+
+.free-courses-page .section-heading p {
+    margin: 0;
+    color: var(--fc-muted);
+    font-size: .92rem;
+}
+
+
+/* ---------- 8. Filter Controls ---------- */
+
+.free-courses-page .catalog-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+
+    margin-bottom: 22px;
+    padding: 17px 20px;
+
+    background: var(--fc-surface);
+    border: 1px solid var(--fc-border);
+    border-radius: 14px;
+}
+
+.free-courses-page .catalog-controls label {
+    color: var(--fc-text);
+    font-size: .9rem;
+    font-weight: 700;
+}
+
+.free-courses-page #categoryFilter {
+    width: min(100%, 290px);
+    min-height: 44px;
+    padding: 10px 38px 10px 13px;
+
+    color: var(--fc-white);
+    background: var(--fc-raised);
+    border: 1px solid var(--fc-border-strong);
+    border-radius: 9px;
+
+    font-size: .9rem;
+    cursor: pointer;
+}
+
+.free-courses-page #categoryFilter option {
+    color: var(--fc-white);
+    background: var(--fc-surface);
+}
+
+.free-courses-page #categoryFilter:focus {
+    border-color: var(--fc-violet);
+}
+
+
+/* ---------- 9. Course Grid ---------- */
+
+.free-courses-page .course-grid,
+.free-courses-page #courseGrid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 20px;
+}
+
+.free-courses-page .course-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: 23px;
+
+    background: var(--fc-card);
+    border: 1px solid var(--fc-border);
+    border-radius: 16px;
+}
+
+.free-courses-page .course-card:hover {
+    border-color: var(--fc-border-strong);
+}
+
+.free-courses-page .course-card h3 {
+    margin: 0 0 12px;
+
+    color: var(--fc-white);
+    font-size: 1.12rem;
+    font-weight: 750;
+    line-height: 1.45;
+}
+
+.free-courses-page .course-card p {
+    color: var(--fc-muted);
+    font-size: .9rem;
+    line-height: 1.75;
+}
+
+.free-courses-page .course-card .course-provider {
+    margin: 0 0 13px;
+
+    color: var(--fc-blue-light);
+    font-size: .82rem;
+    font-weight: 750;
+}
+
+.free-courses-page .course-category {
+    display: inline-flex;
+    align-items: center;
+    align-self: flex-start;
+
+    width: fit-content;
+    margin-bottom: 14px;
+    padding: 5px 10px;
+
+    color: var(--fc-violet-light);
+    background: rgba(139, 124, 200, .11);
+    border: 1px solid rgba(139, 124, 200, .21);
+    border-radius: 6px;
+
+    font-size: .73rem;
+    font-weight: 750;
+    letter-spacing: .03em;
+}
+
+.free-courses-page .course-meta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 9px 15px;
+
+    margin: 10px 0 17px;
+    color: var(--fc-faint);
+    font-size: .8rem;
+}
+
+.free-courses-page .course-meta span {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.free-courses-page .course-description {
+    flex: 1;
+}
+
+.free-courses-page .course-actions {
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 9px;
+
+    margin-top: auto;
+    padding-top: 17px;
+}
+
+.free-courses-page .course-actions a,
+.free-courses-page .course-actions button,
+.free-courses-page .course-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 41px;
+    padding: 10px 14px;
+
+    color: var(--fc-white);
+    background: rgba(139, 124, 200, .12);
+    border: 1px solid rgba(139, 124, 200, .30);
+    border-radius: 9px;
+
+    font-size: .82rem;
+    font-weight: 750;
+    text-align: center;
+}
+
+.free-courses-page .course-actions a:hover,
+.free-courses-page .course-actions button:hover,
+.free-courses-page .course-button:hover {
+    background: rgba(139, 124, 200, .20);
+    border-color: var(--fc-violet);
+}
+
+.free-courses-page .course-actions .primary,
+.free-courses-page .course-actions a.primary,
+.free-courses-page .course-actions button.primary {
+    color: #111827;
+    background: var(--fc-blue-light);
+    border-color: var(--fc-blue-light);
+}
+
+.free-courses-page .course-actions .primary:hover,
+.free-courses-page .course-actions a.primary:hover,
+.free-courses-page .course-actions button.primary:hover {
+    background: var(--fc-blue);
+    border-color: var(--fc-blue);
+}
+
+
+/* ---------- 10. Progress Indicators ---------- */
+
+.free-courses-page .course-progress {
+    margin-top: 17px;
+}
+
+.free-courses-page .course-progress-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+
+    margin-bottom: 8px;
+
+    color: var(--fc-muted);
+    font-size: .8rem;
+}
+
+.free-courses-page .course-progress-header strong {
+    color: var(--fc-blue-light);
+    font-variant-numeric: tabular-nums;
+}
+
+.free-courses-page .progress-track,
+.free-courses-page .progress-bar-track {
+    width: 100%;
+    height: 7px;
+    overflow: hidden;
+
+    background: rgba(165, 171, 188, .14);
+    border-radius: 999px;
+}
+
+.free-courses-page .progress-fill,
+.free-courses-page .progress-bar-fill {
+    height: 100%;
+    background: var(--fc-violet);
+    border-radius: inherit;
+}
+
+.free-courses-page .course-card.completed .progress-fill,
+.free-courses-page .course-card.completed .progress-bar-fill {
+    background: var(--fc-success);
+}
+
+
+/* ---------- 11. Catalog Note ---------- */
+
+.free-courses-page .catalog-footnote,
+.free-courses-page #catalog-footnote {
+    margin-top: 23px;
+    padding: 15px 18px;
+
+    color: var(--fc-muted);
+    background: rgba(141, 183, 211, .045);
+    border: 1px solid var(--fc-border);
+    border-radius: 10px;
+
+    font-size: .85rem;
+    line-height: 1.75;
+}
+
+.free-courses-page .catalog-footnote strong,
+.free-courses-page #catalog-footnote strong {
+    color: var(--fc-blue-light);
+}
+
+
+/* ---------- 12. My Learning ---------- */
+
+.free-courses-page #myLearningList,
+.free-courses-page .my-learning-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 17px;
+}
+
+.free-courses-page .learning-item,
+.free-courses-page .learning-card {
+    min-width: 0;
+    padding: 21px;
+
+    background: var(--fc-surface);
+    border: 1px solid var(--fc-border);
+    border-radius: 14px;
+}
+
+.free-courses-page .learning-item h3,
+.free-courses-page .learning-card h3 {
+    margin: 0 0 8px;
+    font-size: 1.03rem;
+    font-weight: 750;
+}
+
+.free-courses-page .learning-item p,
+.free-courses-page .learning-card p {
+    color: var(--fc-muted);
+    font-size: .88rem;
+    line-height: 1.7;
+}
+
+.free-courses-page .learning-item a,
+.free-courses-page .learning-card a {
+    color: var(--fc-blue-light);
+    font-weight: 650;
+    overflow-wrap: anywhere;
+}
+
+.free-courses-page .learning-status {
+    display: inline-flex;
+    align-items: center;
+
+    margin-bottom: 12px;
+    padding: 5px 9px;
+
+    color: var(--fc-violet-light);
+    background: rgba(139, 124, 200, .10);
+    border: 1px solid rgba(139, 124, 200, .22);
+    border-radius: 6px;
+
+    font-size: .74rem;
+    font-weight: 750;
+}
+
+.free-courses-page .learning-status.completed {
+    color: var(--fc-success);
+    background: rgba(117, 182, 154, .09);
+    border-color: rgba(117, 182, 154, .23);
+}
+
+.free-courses-page .learning-status.in-progress {
+    color: var(--fc-violet-light);
+}
+
+
+/* ---------- 13. Empty State ---------- */
+
+.free-courses-page #emptyLearning,
+.free-courses-page .empty-state,
+.free-courses-page .no-courses {
+    padding: 32px 22px;
+
+    background: rgba(27, 36, 53, .70);
+    border: 1px dashed var(--fc-border-strong);
+    border-radius: 14px;
+
+    text-align: center;
+}
+
+.free-courses-page #emptyLearning h3,
+.free-courses-page .empty-state h3,
+.free-courses-page .no-courses h3 {
+    margin-bottom: 8px;
+    color: var(--fc-white);
+    font-size: 1.1rem;
+}
+
+.free-courses-page #emptyLearning p,
+.free-courses-page .empty-state p,
+.free-courses-page .no-courses p {
+    max-width: 550px;
+    margin: 0 auto;
+
+    color: var(--fc-muted);
+    font-size: .9rem;
+    line-height: 1.8;
+}
+
+
+/* ---------- 14. Course Dialog ---------- */
+
+.free-courses-page #courseDialog {
+    width: min(560px, calc(100% - 30px));
+    max-width: 560px;
+    max-height: 88vh;
+    padding: 0;
+    overflow-y: auto;
+
+    color: var(--fc-white);
+    background: var(--fc-surface);
+    border: 1px solid var(--fc-border-strong);
+    border-radius: 19px;
+    box-shadow: 0 24px 65px rgba(3, 8, 20, .40);
+}
+
+.free-courses-page #courseDialog::backdrop {
+    background: rgba(3, 8, 20, .78);
+}
+
+.free-courses-page #courseForm {
+    padding: clamp(22px, 4vw, 32px);
+}
+
+.free-courses-page #courseDialog h2 {
+    margin: 0 0 10px;
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+.free-courses-page #dialogProvider {
+    margin-bottom: 23px;
+    color: var(--fc-blue-light);
+    font-size: .88rem;
+}
+
+.free-courses-page #closeDialog {
+    display: grid;
+    place-items: center;
+
+    width: 38px;
+    height: 38px;
+    margin-left: auto;
+    margin-bottom: 10px;
+
+    color: var(--fc-muted);
+    background: var(--fc-raised);
+    border: 1px solid var(--fc-border);
+    border-radius: 9px;
+
+    font-size: 1.15rem;
+}
+
+.free-courses-page #closeDialog:hover {
+    color: var(--fc-white);
+    border-color: var(--fc-border-strong);
+}
+
+
+/* ---------- 15. Form Fields ---------- */
+
+.free-courses-page #courseForm label,
+.free-courses-page .form-group {
+    display: block;
+    margin-bottom: 17px;
+
+    color: var(--fc-text);
+    font-size: .88rem;
+    font-weight: 650;
+}
+
+.free-courses-page #courseForm input:not([type="checkbox"]):not([type="range"]),
+.free-courses-page #courseForm select,
+.free-courses-page #courseForm textarea {
+    display: block;
+    width: 100%;
+    min-height: 44px;
+    margin-top: 7px;
+    padding: 10px 12px;
+
+    color: var(--fc-white);
+    background: var(--fc-bg);
+    border: 1px solid var(--fc-border-strong);
+    border-radius: 9px;
+
+    font-size: .9rem;
+}
+
+.free-courses-page #courseForm input::placeholder,
+.free-courses-page #courseForm textarea::placeholder {
+    color: var(--fc-faint);
+}
+
+.free-courses-page #courseForm input:focus,
+.free-courses-page #courseForm select:focus,
+.free-courses-page #courseForm textarea:focus {
+    border-color: var(--fc-violet);
+    outline: 2px solid rgba(139, 124, 200, .14);
+}
+
+.free-courses-page #progressRange {
+    width: 100%;
+    margin-top: 10px;
+    accent-color: var(--fc-violet);
+}
+
+.free-courses-page #progressValue {
+    display: inline-block;
+    margin-top: 7px;
+
+    color: var(--fc-blue-light);
+    font-weight: 800;
+}
+
+.free-courses-page #courseCompleted {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+    accent-color: var(--fc-success);
+    vertical-align: middle;
+}
+
+.free-courses-page #certificateFields {
+    margin-top: 18px;
+    padding: 16px;
+
+    background: rgba(141, 183, 211, .045);
+    border: 1px solid var(--fc-border);
+    border-radius: 11px;
+}
+
+.free-courses-page #certificateFields h3 {
+    margin: 0 0 15px;
+    color: var(--fc-blue-light);
+    font-size: 1rem;
+}
+
+
+/* ---------- 16. Dialog Buttons ---------- */
+
+.free-courses-page .dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    margin-top: 24px;
+}
+
+.free-courses-page #cancelDialog,
+.free-courses-page #courseForm button[type="submit"] {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 43px;
+    padding: 10px 17px;
+
+    border-radius: 9px;
+    font-size: .87rem;
+    font-weight: 750;
+}
+
+.free-courses-page #cancelDialog {
+    color: var(--fc-text);
+    background: var(--fc-raised);
+    border: 1px solid var(--fc-border-strong);
+}
+
+.free-courses-page #courseForm button[type="submit"] {
+    color: #111827;
+    background: var(--fc-blue-light);
+    border: 1px solid var(--fc-blue-light);
+}
+
+.free-courses-page #courseForm button[type="submit"]:hover {
+    background: var(--fc-blue);
+}
+
+
+/* ---------- 17. Toast Message ---------- */
+
+.free-courses-page #toast,
+.free-courses-page .toast {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    z-index: 1000;
+
+    width: fit-content;
+    max-width: min(420px, calc(100% - 32px));
+    padding: 14px 18px;
+
+    color: var(--fc-white);
+    background: var(--fc-raised);
+    border: 1px solid var(--fc-border-strong);
+    border-left: 4px solid var(--fc-violet);
+    border-radius: 10px;
+    box-shadow: var(--fc-shadow);
+
+    font-size: .88rem;
+    overflow-wrap: anywhere;
+}
+
+.free-courses-page #toast.success,
+.free-courses-page .toast.success {
+    border-left-color: var(--fc-success);
+}
+
+.free-courses-page #toast.error,
+.free-courses-page .toast.error {
+    border-left-color: var(--fc-danger);
+}
+
+
+/* ---------- 18. Footer ---------- */
+
+.free-courses-page .course-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 14px;
+
+    margin-top: 55px;
+    padding: 23px 0 28px;
+
+    border-top: 1px solid var(--fc-border);
+}
+
+.free-courses-page .course-footer p {
+    margin: 0;
+    color: var(--fc-faint);
+    font-size: .83rem;
+}
+
+.free-courses-page .course-footer a {
+    color: var(--fc-blue-light);
+    font-size: .85rem;
+    font-weight: 650;
+}
+
+
+/* ---------- 19. Tablet Layout ---------- */
+
+@media (max-width: 950px) {
+    .free-courses-page .course-grid,
+    .free-courses-page #courseGrid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .free-courses-page .course-header {
+        gap: 15px;
+    }
+
+    .free-courses-page .summary-card {
+        padding: 19px;
+    }
+}
+
+
+/* ---------- 20. Mobile Layout ---------- */
+
+@media (max-width: 680px) {
+    .free-courses-page .course-header,
+    .free-courses-page .course-hero,
+    .free-courses-page .catalog-section,
+    .free-courses-page .my-learning-section,
+    .free-courses-page .course-footer {
+        width: calc(100% - 32px);
+    }
+
+    .free-courses-page .course-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 13px;
+
+        padding: 17px 0;
+    }
+
+    .free-courses-page .course-header nav {
+        justify-content: flex-start;
+        width: 100%;
+        gap: 5px;
+    }
+
+    .free-courses-page .course-header nav a,
+    .free-courses-page .course-header nav button {
+        min-height: 37px;
+        padding: 8px 10px;
+        font-size: .8rem;
+    }
+
+    .free-courses-page .course-hero {
+        margin-top: 23px;
+        margin-bottom: 23px;
+        padding: 27px 22px;
+    }
+
+    .free-courses-page .course-hero h1 {
+        font-size: clamp(1.9rem, 8vw, 2.7rem);
+    }
+
+    .free-courses-page .learning-summary,
+    .free-courses-page .summary-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin-bottom: 38px;
+    }
+
+    .free-courses-page .summary-card {
+        padding: 17px;
+    }
+
+    .free-courses-page .summary-value,
+    .free-courses-page .summary-card strong {
+        font-size: 1.55rem;
+    }
+
+    .free-courses-page .course-grid,
+    .free-courses-page #courseGrid,
+    .free-courses-page #myLearningList,
+    .free-courses-page .my-learning-list {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .free-courses-page .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .free-courses-page .catalog-controls {
+        align-items: stretch;
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .free-courses-page #categoryFilter {
+        width: 100%;
+    }
+
+    .free-courses-page .course-card {
+        padding: 20px;
+    }
+
+    .free-courses-page .course-footer {
+        align-items: flex-start;
+        flex-direction: column;
+        margin-top: 38px;
+    }
+}
+
+
+/* ---------- 21. Small Phones ---------- */
+
+@media (max-width: 390px) {
+    .free-courses-page .course-header,
+    .free-courses-page .course-hero,
+    .free-courses-page .catalog-section,
+    .free-courses-page .my-learning-section,
+    .free-courses-page .course-footer {
+        width: calc(100% - 24px);
+    }
+
+    .free-courses-page .brand {
+        font-size: 1.05rem;
+    }
+
+    .free-courses-page .course-hero {
+        padding: 23px 17px;
+    }
+
+    .free-courses-page .course-hero h1 {
+        font-size: 1.9rem;
+    }
+
+    .free-courses-page .course-actions {
+        flex-direction: column;
+    }
+
+    .free-courses-page .course-actions a,
+    .free-courses-page .course-actions button {
+        width: 100%;
+    }
+
+    .free-courses-page .dialog-actions {
+        flex-direction: column-reverse;
+    }
+
+    .free-courses-page #cancelDialog,
+    .free-courses-page #courseForm button[type="submit"] {
+        width: 100%;
+    }
+
+    .free-courses-page #toast,
+    .free-courses-page .toast {
+        right: 12px;
+        bottom: 12px;
+        max-width: calc(100% - 24px);
+    }
+}
+
+
+/* ---------- 22. Remove Decorative Motion ---------- */
+
+.free-courses-page .hero-orbit,
+.free-courses-page .orbit,
+.free-courses-page .orbit-one,
+.free-courses-page .orbit-two,
+.free-courses-page .orbit-three,
+.free-courses-page .orbit-core,
+.free-courses-page .orbit-star,
+.free-courses-page .star-one,
+.free-courses-page .star-two,
+.free-courses-page .star-three {
+    display: none !important;
+}
+
+.free-courses-page *,
+.free-courses-page *::before,
+.free-courses-page *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .free-courses-page *,
+    .free-courses-page *::before,
+    .free-courses-page *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}
