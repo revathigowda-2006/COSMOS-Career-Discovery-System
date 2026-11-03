@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Register | COSMOS</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="auth-page">
+
+<header class="main-header">
+    <a href="index.html" class="brand">
+        <div class="brand-symbol">✦</div>
+        <div class="brand-name">
+            <strong>COSMOS</strong>
+            <span>CAREER INTELLIGENCE</span>
+        </div>
+    </a>
+
+    <a href="index.html" class="back-home">← Back to Home</a>
+</header>
+
+<main class="auth-container">
+
+    <div class="auth-card">
+
+        <div class="auth-icon">✦</div>
+
+        <span class="page-label">CREATE ACCOUNT</span>
+
+        <h1>Start Your Journey</h1>
+
+        <p class="auth-subtitle">
+            Create your COSMOS student account. </p>
+
+        <form id="registerForm">
+
+            <div class="form-group">
+                <label class="form-label" for="fullName">
+                    Full Name
+                </label>
+
+                <input
+                    type="text"
+                    id="fullName"
+                    class="form-control"
+                    placeholder="Enter your full name"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="username">
+                    Username
+                </label>
+
+                <input
+                    type="text"
+                    id="username"
+                    class="form-control"
+                    placeholder="Choose a username"
+                    required
+                    autocomplete="username"
+                >
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="password">
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    id="password"
+                    class="form-control"
+                    placeholder="Create a password"
+                    required
+                    autocomplete="new-password"
+                >
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="confirmPassword">
+                    Confirm Password
+                </label>
+
+                <input
+                    type="password"
+                    id="confirmPassword"
+                    class="form-control"
+                    placeholder="Confirm your password"
+                    required
+                    autocomplete="new-password"
+                >
+            </div>
+            
+           
+<!-- Department Selection -->
+<div class="form-group">
+    <label class="form-label" for="department">
+        Select Your Department
+    </label>
+
+    <select
+        id="department"
+        name="department"
+        class="form-control"
+        required
+    >
+        <option value="">Choose your department</option>
+        <option value="commerce">Commerce (B.Com)</option>
+        <option value="management">Management (BBA / MBA)</option>
+        <option value="computer_science">Computer Science / IT</option>
+        <option value="engineering">Engineering</option>
+        <option value="science">Science</option>
+        <option value="arts_humanities">Arts and Humanities</option>
+        <option value="other">Other Departments</option>
+    </select>
+</div>
+
+<!-- Career Direction -->
+<div class="form-group">
+    <label class="form-label" for="careerDirection">
+        Preferred Career Direction
+    </label>
+
+    <select
+        id="careerDirection"
+        name="careerDirection"
+        class="form-control"
+        required
+    >
+        <option value="">Choose your career direction</option>
+        <option value="mnc">MNC and Corporate Jobs</option>
+        <option value="technology">IT and Technical Careers</option>
+        <option value="business">Business and Entrepreneurship</option>
+        <option value="government">Government Jobs</option>
+        <option value="creative">Creative and Professional Careers</option>
+        <option value="explore">Help Me Explore Careers</option>
+    </select>
+</div>
+
+            <div id="message" class="form-message"></div>
+
+            <button type="submit" class="primary-btn full-btn" id="registerButton">
+                Create Account
+                <span>→</span>
+            </button>
+
+        </form>
+
+        <div class="auth-footer">
+            Already have an account?
+            <a href="login.html">Login</a>
+        </div>
+
+    </div>
+
+</main>
+
+<script src="js/config.js"></script>
+<script src="js/register.js"></script>
+
+</body>
+</html>

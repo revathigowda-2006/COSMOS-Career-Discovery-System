@@ -1,0 +1,204 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Technical Test | COSMOS</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="test-page">
+
+<header class="main-header">
+    <a href="dashboard.html" class="brand">
+        <div class="brand-symbol">✦</div>
+
+        <div class="brand-name">
+            <strong>COSMOS</strong>
+            <span>CAREER INTELLIGENCE</span>
+        </div>
+    </a>
+
+    <a href="dashboard.html" class="back-home">
+        ← Dashboard
+    </a>
+</header>
+
+<main>
+    <section class="page-hero">
+        <div class="page-hero-content">
+            <span class="page-label">STEP 04 • TEST</span>
+
+            <h1>Technical Skills Test</h1>
+
+            <p>
+                Test your programming and technical knowledge.
+            </p>
+        </div>
+    </section>
+
+    <section class="test-section">
+        <div class="test-container">
+
+            <div class="test-info-grid">
+                <div class="test-info-card">
+                    <strong>30</strong>
+                    <span>Questions</span>
+                </div>
+
+                <div class="test-info-card">
+                    <strong>10</strong>
+                    <span>Minutes</span>
+                </div>
+
+                <div class="test-info-card">
+                    <strong>60%</strong>
+                    <span>Pass Mark</span>
+                </div>
+            </div>
+
+            <div class="test-header">
+                <div class="timer-box" id="timer">10:00</div>
+            </div>
+
+            <div class="test-progress">
+                <span id="progressText">Question 1 of 30</span>
+
+                <div class="progress-track">
+                    <div
+                        class="progress-fill"
+                        id="testProgressFill"
+                    ></div>
+                </div>
+            </div>
+
+            <div id="testArea">
+                <div class="question-card">
+                    <span
+                        class="question-category"
+                        id="questionCategory"
+                    >PROGRAMMING</span>
+
+                    <h2
+                        class="question-text"
+                        id="questionText"
+                    >Loading question...</h2>
+
+                    <div
+                        class="options-grid"
+                        id="optionsContainer"
+                    ></div>
+                </div>
+
+                <div class="test-navigation">
+                    <button
+                        class="outline-btn"
+                        id="previousButton"
+                        type="button"
+                    >
+                        ← Previous
+                    </button>
+
+                    <button
+                        class="primary-btn"
+                        id="nextButton"
+                        type="button"
+                    >
+                        Next →
+                    </button>
+                </div>
+            </div>
+
+            <!-- Hidden until the test is submitted -->
+            <div
+                class="test-result"
+                id="resultSection"
+                hidden
+            >
+                <div class="result-icon" id="resultIcon">✦</div>
+
+                <span class="page-label">TEST RESULT</span>
+
+                <h2 id="resultTitle">Test Completed</h2>
+
+                <p id="resultMessage"></p>
+
+                <div class="result-details">
+                    <div>
+                        <strong id="scoreValue">0/30</strong>
+                        <span>Score</span>
+                    </div>
+
+                    <div>
+                        <strong id="percentageValue">0%</strong>
+                        <span>Percentage</span>
+                    </div>
+
+                    <div>
+                        <strong id="correctAnswers">0</strong>
+                        <span>Correct</span>
+                    </div>
+
+                    <div>
+                        <strong id="wrongAnswers">0</strong>
+                        <span>Wrong</span>
+                    </div>
+                </div>
+
+                <div class="test-status-box">
+                    <span>Status</span>
+                    <strong id="testStatus">—</strong>
+                </div>
+
+                <div class="recommended-career">
+                    <span>RECOMMENDED CAREER</span>
+                    <h3 id="recommendedCareer">—</h3>
+                    <p id="careerDescription"></p>
+                </div>
+
+                <div
+                    class="certificate-result-message"
+                    id="certificateMessage"
+                ></div>
+
+                <div class="result-actions">
+                    <!-- Retry button removed to prevent normal retakes -->
+
+                    <a
+                        href="careers.html"
+                        class="btn-primary"
+                        id="careerButton"
+                    >
+                        Continue to Career Recommendation →
+                    </a>
+
+                    <a
+                        href="dashboard.html"
+                        class="secondary-btn"
+                    >
+                        Dashboard
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</main>
+
+<script src="js/config.js"></script>
+<script src="js/journey.js"></script>
+<script src="js/test.js"></script>
+
+</body>
+</html>

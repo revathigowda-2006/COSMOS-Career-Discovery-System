@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard | COSMOS</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="admin-page">
+
+<header class="main-header">
+
+    <a href="admin.html" class="brand">
+        <div class="brand-symbol">✦</div>
+
+        <div class="brand-name">
+            <strong>COSMOS</strong>
+            <span>ADMIN CONSOLE</span>
+        </div>
+    </a>
+
+    <div class="header-actions">
+
+        <div class="profile-mini">
+            <div class="avatar" id="adminAvatar">
+                A
+            </div>
+
+            <div>
+                <strong id="adminName">Administrator</strong>
+                <span>Admin</span>
+            </div>
+        </div>
+
+        <button
+            class="outline-btn small-btn"
+            id="adminLogoutButton"
+        >
+            Logout
+        </button>
+
+    </div>
+
+</header>
+
+<main>
+
+<section class="admin-hero">
+
+    <div class="admin-container">
+
+        <span class="page-label">
+            ADMINISTRATION
+        </span>
+
+        <h1>System Overview</h1>
+
+        <p>
+            Monitor COSMOS students, assessments, technical
+            tests and certificates.
+        </p>
+
+    </div>
+
+</section>
+
+<section class="admin-container">
+
+    <div id="adminMessage" class="admin-message"></div>
+
+    <div class="admin-stats">
+
+        <div class="admin-stat-card">
+            <span>STUDENTS</span>
+            <strong id="totalStudents">0</strong>
+        </div>
+
+        <div class="admin-stat-card">
+            <span>ASSESSMENTS</span>
+            <strong id="totalAssessments">0</strong>
+        </div>
+
+        <div class="admin-stat-card">
+            <span>TESTS</span>
+            <strong id="totalTests">0</strong>
+        </div>
+
+        <div class="admin-stat-card">
+            <span>CERTIFICATES</span>
+            <strong id="totalCertificates">0</strong>
+        </div>
+
+        <div class="admin-stat-card">
+            <span>PASSED TESTS</span>
+            <strong id="passedTests">0</strong>
+        </div>
+
+        <div class="admin-stat-card">
+            <span>REVOKED</span>
+            <strong id="revokedCertificates">0</strong>
+        </div>
+
+    </div>
+
+    <div class="admin-table-card">
+
+        <div class="admin-toolbar">
+
+            <div>
+                <span class="page-label">STUDENT DATA</span>
+                <h2>Registered Students</h2>
+            </div>
+
+            <input
+                type="search"
+                id="studentSearch"
+                class="admin-search"
+                placeholder="Search students..."
+            >
+
+        </div>
+
+        <div class="admin-table-wrapper">
+
+            <table class="admin-table">
+
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Username</th>
+                        <th>Registered</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+
+                <tbody id="studentsTableBody">
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+    <div class="admin-table-card">
+
+        <div class="admin-toolbar">
+
+            <div>
+                <span class="page-label">ASSESSMENTS</span>
+                <h2>Career Assessments</h2>
+            </div>
+
+        </div>
+
+        <div class="admin-table-wrapper">
+
+            <table class="admin-table">
+
+                <thead>
+                    <tr>
+                        <th>Student</th>
+                        <th>Technical</th>
+                        <th>Analytical</th>
+                        <th>Creative</th>
+                        <th>Communication</th>
+                        <th>Leadership</th>
+                        <th>Career</th>
+                    </tr>
+                </thead>
+
+                <tbody id="assessmentsTableBody">
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+    <div class="admin-table-card">
+
+        <div class="admin-toolbar">
+
+            <div>
+                <span class="page-label">TECHNICAL TESTS</span>
+                <h2>Test Results</h2>
+            </div>
+
+        </div>
+
+        <div class="admin-table-wrapper">
+
+            <table class="admin-table">
+
+                <thead>
+                    <tr>
+                        <th>Student</th>
+                        <th>Score</th>
+                        <th>Percentage</th>
+                        <th>Correct</th>
+                        <th>Wrong</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+
+                <tbody id="testsTableBody">
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+    <div class="admin-table-card">
+
+        <div class="admin-toolbar">
+
+            <div>
+                <span class="page-label">CERTIFICATES</span>
+                <h2>Issued Certificates</h2>
+            </div>
+
+            <input
+                type="search"
+                id="certificateSearch"
+                class="admin-search"
+                placeholder="Search certificates..."
+            >
+
+        </div>
+
+        <div class="admin-table-wrapper">
+
+            <table class="admin-table">
+
+                <thead>
+                    <tr>
+                        <th>Certificate ID</th>
+                        <th>Student</th>
+                        <th>Career</th>
+                        <th>Score</th>
+                        <th>Issue Date</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+
+                <tbody id="certificatesTableBody">
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+<footer class="site-footer">
+
+    <div class="footer-bottom">
+        <p>© 2026 COSMOS Career Intelligence. Admin Console.</p>
+    </div>
+
+</footer>
+
+<script src="js/config.js"></script>
+<script src="js/admin.js"></script>
+
+</body>
+</html>

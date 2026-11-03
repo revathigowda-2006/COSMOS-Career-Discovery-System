@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Your Resume | COSMOS</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/resume-builder.css">
+</head>
+
+<body class="resume-builder-page">
+
+<header class="main-header">
+    <a href="dashboard.html" class="brand">
+        <div class="brand-symbol">✦</div>
+        <div class="brand-name">
+            <strong>COSMOS</strong>
+            <span>CAREER INTELLIGENCE</span>
+        </div>
+    </a>
+
+    <a href="resume.html" class="back-home">← Resume Analyzer</a>
+</header>
+
+<main class="builder-layout">
+    <section class="builder-intro">
+        <span class="page-label">RESUME BUILDER</span>
+        <h1>Create your resume</h1>
+        <p>
+            Your COSMOS analysis has filled in a first draft.
+            Edit the details, then download your resume as a PDF.
+        </p>
+        <p id="builderMessage" class="builder-message" role="status"></p>
+    </section>
+
+    <div class="builder-columns">
+        <section class="builder-panel" aria-labelledby="detailsTitle">
+            <h2 id="detailsTitle">Your details</h2>
+
+            <label>Full name
+                <input id="fullName" type="text" autocomplete="name">
+            </label>
+
+            <label>Career title
+                <input id="headline" type="text">
+            </label>
+
+            <div class="builder-two-columns">
+                <label>Email
+                    <input id="email" type="email" autocomplete="email">
+                </label>
+
+                <label>Phone
+                    <input id="phone" type="tel" autocomplete="tel">
+                </label>
+            </div>
+
+            <label>Location
+                <input id="location" type="text" autocomplete="address-level2">
+            </label>
+
+            <label>Professional summary
+                <textarea id="summary" rows="4"></textarea>
+            </label>
+
+            <label>Education
+                <textarea id="education" rows="3"></textarea>
+            </label>
+
+            <label>Skills
+                <textarea
+                    id="skills"
+                    rows="3"
+                    placeholder="Separate skills with commas or new lines"
+                ></textarea>
+            </label>
+
+            <label>Experience
+                <textarea id="experience" rows="4"></textarea>
+            </label>
+
+            <label>Projects
+                <textarea id="projects" rows="4"></textarea>
+            </label>
+
+            <label>Certifications
+                <textarea id="certifications" rows="3"></textarea>
+            </label>
+
+            <label>Signature name
+                <input id="signatureName" type="text" autocomplete="name">
+            </label>
+
+            <button
+                id="downloadResumeButton"
+                class="primary-btn full-btn"
+                type="button"
+            >
+                Download Resume PDF
+            </button>
+
+            <button
+                id="linkedinJobsButton"
+                class="secondary-btn full-btn"
+                type="button"
+            >
+                Find Jobs on LinkedIn
+            </button>
+        </section>
+
+        <section class="resume-preview-wrap" aria-label="Resume preview">
+            <article id="resumePreview" class="resume-preview">
+                <header class="resume-preview-header">
+                    <h1 id="previewName">Your Name</h1>
+                    <p id="previewHeadline" class="preview-headline"></p>
+                    <p id="previewContact" class="preview-contact"></p>
+                </header>
+
+                <section id="summarySection" class="preview-section">
+                    <h2>Professional Summary</h2>
+                    <p id="previewSummary"></p>
+                </section>
+
+                <section id="educationSection" class="preview-section">
+                    <h2>Education</h2>
+                    <p id="previewEducation"></p>
+                </section>
+
+                <section id="skillsSection" class="preview-section">
+                    <h2>Skills</h2>
+                    <div id="previewSkills" class="preview-skills"></div>
+                </section>
+
+                <section id="experienceSection" class="preview-section">
+                    <h2>Experience</h2>
+                    <p id="previewExperience"></p>
+                </section>
+
+                <section id="projectsSection" class="preview-section">
+                    <h2>Projects</h2>
+                    <p id="previewProjects"></p>
+                </section>
+
+                <section id="certificationsSection" class="preview-section">
+                    <h2>Certifications</h2>
+                    <p id="previewCertifications"></p>
+                </section>
+
+                <section
+                    id="signatureSection"
+                    class="preview-section signature-section"
+                >
+                    <p>Signature</p>
+                    <div class="signature-line"></div>
+                    <strong id="previewSignature"></strong>
+                </section>
+            </article>
+        </section>
+    </div>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/config.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.2/html2pdf.bundle.min.js"></script>
+<script src="js/resume-builder.js"></script>
+
+</body>
+</html>

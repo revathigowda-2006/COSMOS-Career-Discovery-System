@@ -1,0 +1,240 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore free learning resources, track course progress, and record certificates with COSMOS.">
+    <meta name="theme-color" content="#070817">
+
+    <title>Free Courses | COSMOS</title>
+
+    <!-- Keep the existing global stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="free-courses-page">
+
+<header class="site-header">
+    <div class="header-container">
+
+        <a href="index.html" class="brand">
+            <div class="brand-symbol">✦</div>
+            <div class="brand-text">
+                <strong>COSMOS</strong>
+                <span>CAREER INTELLIGENCE</span>
+            </div>
+        </a>
+
+<nav aria-label="Main navigation" class="main-navigation">
+    <a href="dashboard.html">Dashboard</a>
+
+    <a class="active" href="free-courses.html" aria-current="page">
+        Free Courses
+    </a>
+
+    <button type="button" id="logoutButton">Logout</button>
+</nav>
+  </header>
+
+<main class="courses-main">
+
+    <!-- HERO -->
+    <section class="course-hero">
+        <div class="hero-content">
+            <span class="eyebrow">✦ LEARN · PRACTICE · GROW</span>
+
+            <h1>
+                Learn Today.<br>
+                <span>Build Your Tomorrow.</span>
+            </h1>
+
+            <p>
+                Discover free learning opportunities from trusted platforms.
+                Build useful skills, explore new career paths, and keep track
+                of your learning journey with COSMOS.
+            </p>
+
+            <a href="#courseCatalog" class="hero-button">
+                Explore Courses <span aria-hidden="true">↗</span>
+            </a>
+
+            <div class="hero-note">
+                <span class="note-star">✦</span>
+                <span>
+                    Course access and certificates depend on each provider.
+                    Always check the provider's current terms.
+                </span>
+            </div>
+        </div>
+
+        <div class="hero-orbit" aria-hidden="true">
+            <div class="orbit orbit-one"></div>
+            <div class="orbit orbit-two"></div>
+            <div class="orbit orbit-three"></div>
+            <div class="orbit-core">✦</div>
+            <span class="orbit-star star-one">✦</span>
+            <span class="orbit-star star-two">✧</span>
+            <span class="orbit-star star-three">✦</span>
+        </div>
+    </section>
+
+    <!-- LEARNING SUMMARY -->
+    <section class="learning-summary" aria-label="Your learning summary">
+
+        <article class="summary-card">
+            <span class="summary-icon">◷</span>
+            <div>
+                <span class="summary-label">COURSES STARTED</span>
+                <strong id="startedCount">0</strong>
+                <small>Your learning journey</small>
+            </div>
+        </article>
+
+        <article class="summary-card">
+            <span class="summary-icon gold-icon">✓</span>
+            <div>
+                <span class="summary-label">COURSES COMPLETED</span>
+                <strong id="completedCount">0</strong>
+                <small>Skills you've completed</small>
+            </div>
+        </article>
+
+        <article class="summary-card">
+            <span class="summary-icon violet-icon">♧</span>
+            <div>
+                <span class="summary-label">CERTIFICATES RECORDED</span>
+                <strong id="certificateCount">0</strong>
+                <small>Your achievements</small>
+            </div>
+        </article>
+
+    </section>
+
+    <!-- COURSE CATALOG -->
+    <section class="catalog-section" id="courseCatalog">
+
+        <div class="section-heading">
+            <div>
+                <span class="eyebrow">YOUR NEXT OPPORTUNITY</span>
+                <h2>Explore free learning</h2>
+                <p class="section-description">
+                    Choose a course that supports your interests and career goals.
+                </p>
+            </div>
+
+                   </div>
+
+        <div id="courseGrid" class="course-grid" aria-live="polite">
+            <!-- Course cards are rendered by js/free-courses.js -->
+        </div>
+
+      </section>
+
+    
+</main>
+
+<footer class="course-footer">
+       <span>© 2026 COSMOS Career Intelligence</span>
+</footer>
+
+<!-- COURSE PROGRESS DIALOG -->
+<dialog id="courseDialog" class="course-dialog">
+    <form method="dialog" id="courseForm">
+
+        <button
+            class="dialog-close"
+            type="button"
+            id="closeDialog"
+            aria-label="Close dialog"
+        >×</button>
+
+        <span class="eyebrow">✦ UPDATE YOUR LEARNING</span>
+        <h2 id="dialogTitle">Course progress</h2>
+        <p id="dialogProvider" class="dialog-provider"></p>
+
+        <input type="hidden" id="dialogCourseId">
+
+        <div class="progress-control">
+            <label for="progressRange">
+                Your progress
+                <strong id="progressValue">0%</strong>
+            </label>
+            <input
+                id="progressRange"
+                type="range"
+                min="0"
+                max="100"
+                step="5"
+                value="0"
+            >
+            <div class="range-labels">
+                <span>Just started</span>
+                <span>Completed</span>
+            </div>
+        </div>
+
+        <label class="check-label" for="courseCompleted">
+            <input id="courseCompleted" type="checkbox">
+            <span>I have completed this course</span>
+        </label>
+
+        <div id="certificateFields" class="certificate-fields" hidden>
+            <div class="certificate-heading">
+                <span>✦</span>
+                <div>
+                    <h3>Record your achievement</h3>
+                    <p>Enter the details of a certificate you earned.</p>
+                </div>
+            </div>
+
+            <label for="certificateTitle">
+                Certificate or credential name
+            </label>
+            <input
+                id="certificateTitle"
+                type="text"
+                maxlength="120"
+                placeholder="e.g. Networking Basics"
+            >
+
+            <label for="certificateUrl">
+                Certificate link <span>(optional)</span>
+            </label>
+            <input
+                id="certificateUrl"
+                type="url"
+                maxlength="500"
+                placeholder="https://..."
+            >
+
+            <label for="certificateDate">
+                Date earned <span>(optional)</span>
+            </label>
+            <input id="certificateDate" type="date">
+        </div>
+
+        <div class="dialog-actions">
+            <button
+                class="button-secondary"
+                type="button"
+                id="cancelDialog"
+            >Cancel</button>
+
+            <button
+                class="button-primary"
+                type="submit"
+            >Save progress <span aria-hidden="true">→</span></button>
+        </div>
+
+    </form>
+</dialog>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<!-- Keep your existing JavaScript files -->
+<script src="js/config.js"></script>
+<script src="js/free-courses.js"></script>
+
+</body>
+</html>

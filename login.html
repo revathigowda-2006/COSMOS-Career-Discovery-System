@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | COSMOS</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="auth-page">
+
+<header class="main-header">
+    <a href="index.html" class="brand">
+        <div class="brand-symbol">✦</div>
+        <div class="brand-name">
+            <strong>COSMOS</strong>
+            <span>CAREER INTELLIGENCE</span>
+        </div>
+    </a>
+
+    <a href="index.html" class="back-home">← Back to Home</a>
+</header>
+
+<main class="auth-container">
+
+    <div class="auth-card">
+
+        <div class="auth-icon">◉</div>
+
+        <span class="page-label">WELCOME BACK</span>
+
+        <h1>Login to COSMOS</h1>
+
+        <p class="auth-subtitle">
+            Continue your career discovery journey.
+        </p>
+
+        <form id="loginForm">
+
+            <div class="form-group">
+                <label class="form-label" for="username">
+                    Username
+                </label>
+
+                <input
+                    type="text"
+                    id="username"
+                    class="form-control"
+                    placeholder="Enter your username"
+                    required
+                    autocomplete="username"
+                >
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="password">
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    id="password"
+                    class="form-control"
+                    placeholder="Enter your password"
+                    required
+                    autocomplete="current-password"
+                >
+            </div>
+
+            <div id="message" class="form-message"></div>
+
+            <button type="submit" class="primary-btn full-btn" id="loginButton">
+                Login
+                <span>→</span>
+            </button>
+
+        </form>
+
+        <div class="auth-footer">
+            Don't have an account?
+            <a href="register.html">Create Account</a>
+        </div>
+
+            </div>
+
+</main>
+
+<script src="js/config.js"></script>
+<script src="js/login.js"></script>
+
+</body>
+</html>

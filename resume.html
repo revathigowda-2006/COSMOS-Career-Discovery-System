@@ -1,0 +1,250 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Analyze your resume and discover career opportunities with COSMOS."
+    >
+
+    <title>Resume Analyzer | COSMOS</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="resume-page">
+
+    <!-- ==================== HEADER ==================== -->
+
+    <header class="main-header">
+
+        <a href="dashboard.html" class="brand">
+            <div class="brand-symbol">✦</div>
+
+            <div class="brand-name">
+                <strong>COSMOS</strong>
+                <span>CAREER INTELLIGENCE</span>
+            </div>
+        </a>
+
+        <a href="dashboard.html" class="back-home">
+            ← Dashboard
+        </a>
+
+    </header>
+
+    <!-- ==================== MAIN CONTENT ==================== -->
+
+    <main>
+
+        <!-- Hero Section -->
+
+        <section class="page-hero resume-hero">
+
+            <div class="page-hero-content">
+
+                <span class="page-label">
+                    STEP 03 • ANALYZE
+                </span>
+
+                <h1>Resume Analyzer</h1>
+
+                <p>
+                    Tell COSMOS about your education, skills, projects
+                    and experience to identify your career strengths.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- Resume Form Section -->
+
+        <section class="resume-section">
+
+            <div class="resume-container">
+
+                <form
+                    id="resumeForm"
+                    class="resume-form glass-card"
+                >
+
+                    <!-- Personal and Education Details -->
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+
+                            <label
+                                class="form-label"
+                                for="resumeName"
+                            >
+                                Full Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="resumeName"
+                                name="resumeName"
+                                class="form-control"
+                                placeholder="Your name"
+                                autocomplete="name"
+                                required
+                            >
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label
+                                class="form-label"
+                                for="education"
+                            >
+                                Education
+                            </label>
+
+                            <input
+                                type="text"
+                                id="education"
+                                name="education"
+                                class="form-control"
+                                placeholder="Example: BCA / B.Com / BBA"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+                    <!-- Skills -->
+
+                    <div class="form-group">
+
+                        <label
+                            class="form-label"
+                            for="skills"
+                        >
+                            Skills
+                        </label>
+
+                        <textarea
+                            id="skills"
+                            name="skills"
+                            class="form-control textarea"
+                            placeholder="Example: Python, Java, HTML, CSS, SQL..."
+                            required
+                        ></textarea>
+
+                    </div>
+
+                    <!-- Experience -->
+
+                    <div class="form-group">
+
+                        <label
+                            class="form-label"
+                            for="experience"
+                        >
+                            Experience
+                        </label>
+
+                        <textarea
+                            id="experience"
+                            name="experience"
+                            class="form-control textarea"
+                            placeholder="Internships, work experience or write 'Fresher'"
+                        ></textarea>
+
+                    </div>
+
+                    <!-- Projects -->
+
+                    <div class="form-group">
+
+                        <label
+                            class="form-label"
+                            for="projects"
+                        >
+                            Projects
+                        </label>
+
+                        <textarea
+                            id="projects"
+                            name="projects"
+                            class="form-control textarea"
+                            placeholder="Describe your academic or personal projects"
+                        ></textarea>
+
+                    </div>
+
+                    <!-- Certifications -->
+
+                    <div class="form-group">
+
+                        <label
+                            class="form-label"
+                            for="certifications"
+                        >
+                            Certifications
+                        </label>
+
+                        <textarea
+                            id="certifications"
+                            name="certifications"
+                            class="form-control textarea"
+                            placeholder="List your certifications"
+                        ></textarea>
+
+                    </div>
+
+                    <!-- Form Status Message -->
+
+                    <div
+                        id="resumeMessage"
+                        class="form-message"
+                        role="status"
+                        aria-live="polite"
+                    ></div>
+
+                    <!-- Analyze Button -->
+
+                    <button
+                        type="submit"
+                        class="primary-btn"
+                        id="analyzeResumeButton"
+                    >
+                        Analyze My Resume
+                        <span aria-hidden="true">→</span>
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- ==================== JAVASCRIPT ==================== -->
+
+    <script src="js/config.js"></script>
+    <script src="js/journey.js"></script>
+    <script src="js/resume.js"></script>
+
+</body>
+
+</html>

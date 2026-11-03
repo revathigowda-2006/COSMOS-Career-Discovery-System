@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Discover Your Career | COSMOS</title>
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+<header class="main-header" id="mainHeader">
+
+    <a href="discover.html" class="brand">
+        <div class="brand-symbol">✦</div>
+
+        <div class="brand-name">
+            <strong>COSMOS</strong>
+            <span>CAREER INTELLIGENCE</span>
+        </div>
+    </a>
+            <a href="dashboard.html" class="outline-btn">
+               Dashboard
+            </a>
+        </div>
+    </header>
+
+    <main class="discover-page">
+
+        <section class="discover-container">
+
+            <div class="section-heading">
+                <p class="section-subtitle">STEP 02</p>
+                <h1>Discover Your Career Path</h1>
+                <p>
+                    Explore your strengths and discover the career
+                    direction that matches your interests.
+                </p>
+            </div>
+
+            <div class="discover-result">
+
+                <h2>Your Recommended Career</h2>
+
+                <h3 id="discoverCareer">Loading your career...</h3>
+
+                <p id="discoverDescription">
+                    Your career recommendation will appear here.
+                </p>
+
+            </div>
+
+            <div class="discover-scores">
+
+                <h2>Your Strengths</h2>
+
+                <div class="score-item">
+                    <span>Technical</span>
+                    <span id="discoverTechnical">0</span>
+                </div>
+
+                <div class="score-item">
+                    <span>Analytical</span>
+                    <span id="discoverAnalytical">0</span>
+                </div>
+
+                <div class="score-item">
+                    <span>Creative</span>
+                    <span id="discoverCreative">0</span>
+                </div>
+
+                <div class="score-item">
+                    <span>Communication</span>
+                    <span id="discoverCommunication">0</span>
+                </div>
+
+                <div class="score-item">
+                    <span>Leadership</span>
+                    <span id="discoverLeadership">0</span>
+                </div>
+
+            </div>
+
+            <div class="career-explanation">
+
+                <h2>Why This Career?</h2>
+
+                <p id="careerExplanation">
+                    Your career explanation will appear here.
+                </p>
+
+            </div>
+
+            <div class="discover-completion">
+                <h3>Step 2: Discover Your Career</h3>
+                <p>
+                    Explore your career recommendation before
+                    continuing to the resume analysis stage.
+                </p>
+            </div>
+
+            <div class="discover-actions">
+                <a href="dashboard.html" class="outline-btn">
+                    ← Dashboard
+                </a>
+            
+           <div class="discover-actions">
+                <a href="ai-chat.html" class="outline-btn">
+                    AI-Chat
+                </a>
+
+
+                <button
+                    type="button"
+                    id="continueResumeButton"
+                    class="btn-primary">
+                    Continue to Resume Analysis →
+                </button>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>© 2026 COSMOS. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/config.js"></script>
+    <script src="js/journey.js"></script>
+    <script src="js/discover.js"></script>
+
+</body>
+</html>
